@@ -15,8 +15,7 @@ class ProduitsRepository extends \Doctrine\ORM\EntityRepository
     {
         $qb = $this->createQueryBuilder('u')
                 ->select('u')
-                ->where('u.nom like :chaine')
-                ->andWhere('u.disponible = 1')
+                ->where('u.libelle like :chaine')
                 ->orderBy('u.id')
                 ->setParameter('chaine', $chaine);
         
